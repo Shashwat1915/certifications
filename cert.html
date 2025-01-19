@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Reduce the minimum size to 180px */
+            gap: 15px; /* Reduce the gap between the items */
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .certificate {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .certificate img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .certificate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #certificates h2 {
+            text-align: center;
+            font-size: 2em;
+            margin: 20px auto;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        #certificates h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #ffd700;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .modal:target {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>List Of Certificates</h1>
+        <nav>
+            <ul>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="certificates">
+        <div class="certificates-grid">
+            <div class="certificate">
+                <a href="#modal1">
+                    <img src="certificate1.png" alt="Certificate 1">
+                </a>
+                <h3>It Automation Professional</h3>
+                <p>Program Consisting 6 Certificates</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal2">
+                    <img src="certificate2.png" alt="Certificate 2">
+                </a>
+                <h3>Introduction To Git and Github</h3>
+                <p>Via Coursera</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal3">
+                    <img src="certificate3.png" alt="Certificate 3">
+                </a>
+                <h3>Python With OS</h3>
+                <p>Via Coursera</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal4">
+                    <img src="certificate4.png" alt="Certificate 4">
+                </a>
+                <h3>Cloud Configration Management</h3>
+                <p>Via Coursera</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal5">
+                    <img src="certificate5.png" alt="Certificate 5">
+                </a>
+                <h3>Troubleshooting And Debugging</h3>
+                <p>Via Coursera</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal6">
+                    <img src="certificate6.png" alt="Certificate 6">
+                </a>
+                <h3>Real Time Python</h3>
+                <p>Via Coursera</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal7">
+                    <img src="certificate7.png" alt="Certificate 7">
+                </a>
+                <h3>AI Essesntials</h3>
+                <p>Grade Achieved: 97.99%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal8">
+                    <img src="certificate8.png" alt="Certificate 8">
+                </a>
+                <h3>Data Analytics</h3>
+                <p>Grade Achieved: 95%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal9">
+                    <img src="certificate9.png" alt="Certificate 9">
+                </a>
+                <h3>Data Exploration</h3>
+                <p>Grade Achieved: 92.50%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal10">
+                    <img src="certificate10.png" alt="Certificate 10">
+                </a>
+                <h3>Data Cleansing</h3>
+                <p>Grade Achieved: 85.71%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal11">
+                    <img src="certificate11.png" alt="Certificate 11">
+                </a>
+                <h3>Data Question & Answers</h3>
+                <p>Grade Achieved: 95%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal12">
+                    <img src="certificate12.png" alt="Certificate 12">
+                </a>
+                <h3>Google Capstone - Case Study</h3>
+                <p>Grade Achieved: 100%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal13">
+                    <img src="certificate13.png" alt="Certificate 13">
+                </a>
+                <h3>Data Driven Questions</h3>
+                <p>Grade Achieved: 100%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal14">
+                    <img src="certificate14.png" alt="Certificate 14">
+                </a>
+                <h3>Database Management System</h3>
+                <p>Grade Achieved: 62%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal15">
+                    <img src="certificate15.png" alt="Certificate 15">
+                </a>
+                <h3>Data Cleansing</h3>
+                <p>Grade Achieved: 85.71%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal16">
+                    <img src="certificate16.png" alt="Certificate 16">
+                </a>
+                <h3>Machine Learning - Dimensionality Reduction </h3>
+                <p>Grade Achieved: 79%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal17">
+                    <img src="certificate17.png" alt="Certificate 17">
+                </a>
+                <h3>Machine Learning With Python</h3>
+                <p>Grade Achieved: 85%</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal18">
+                    <img src="certificate18.png" alt="Certificate 18">
+                </a>
+                <h3>Java Fundamentals</h3>
+                <p>Via SkillsNet</p>
+            </div>
+            <div class="certificate">
+                <a href="#modal19">
+                    <img src="certificate19.png" alt="Certificate 19">
+                </a>
+                <h3>Cloud Application Developer</h3>
+                <p>Via SkillsNet</p>
+            </div>
+        </div>
+`       
+        <div id="modal1" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate1.png" alt="Certificate 1">
+        </div>
+        <div id="modal2" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate2.png" alt="Certificate 2">
+        </div>
+        <div id="modal3" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate3.png" alt="Certificate 3">
+        </div>
+        <div id="modal4" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate4.png" alt="Certificate 4">
+        </div>
+        <div id="modal5" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate5.png" alt="Certificate 5">
+        </div> 
+        <div id="modal6" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate6.png" alt="Certificate 6">
+        </div>
+        <div id="modal7" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate7.png" alt="Certificate 7">
+        </div>
+        <div id="modal8" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate8.png" alt="Certificate 8">
+        </div>
+        <div id="modal9" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate9.png" alt="Certificate 9">
+        </div>
+        <div id="modal10" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate10.png" alt="Certificate 10">
+        </div>
+        <div id="modal11" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate11.png" alt="Certificate 11">
+        </div>
+        <div id="modal12" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate12.png" alt="Certificate 12">
+        </div>
+        <div id="modal13" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate13.png" alt="Certificate 13">
+        </div>
+        <div id="modal14" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate14.png" alt="Certificate 14">
+        </div>
+        <div id="modal15" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate15.png" alt="Certificate 15">
+        </div>
+        <div id="modal16" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate16.png" alt="Certificate 16">
+        </div>
+        <div id="modal17" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate17.png" alt="Certificate 17">
+        </div>
+        <div id="modal18" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate18.png" alt="Certificate 18">
+        </div>
+        <div id="modal19" class="modal">
+            <a href="#" style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+            <img src="certificate19.png" alt="Certificate 19">
+        </div>
+    </section>
+</body>
+</html>
